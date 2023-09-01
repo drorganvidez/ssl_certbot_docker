@@ -23,7 +23,6 @@ services:
       - ./letsencrypt:/etc/letsencrypt
     networks:
       - domain-net
-    command: "sleep infinity"
 
 networks:
   domain-net:
