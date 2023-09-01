@@ -16,7 +16,7 @@ while true; do
     read confirm
 
     # Si el usuario confirma, rompe el bucle y continua con el script. Si no, repite el bucle.
-    if [ $confirm == "y" || $confirm == "Y" ]; then
+    if [[ $confirm == "y" || $confirm == "Y" ]]; then
         break
     else
         echo "Por favor, reintroduce los datos."
