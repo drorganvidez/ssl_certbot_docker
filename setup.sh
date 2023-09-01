@@ -33,3 +33,6 @@ docker compose -f docker-compose.setup.yml up -d nginx
 
 # Generamos certificado
 docker compose -f docker-compose.setup.yml run certbot certonly --webroot --webroot-path=/var/www -d $domain --email $email --agree-tos --no-eff-email --force-renewal
+
+# Realizamos la redirección del puerto 80 al 443
+docker compose down && docker compose up -d --build
