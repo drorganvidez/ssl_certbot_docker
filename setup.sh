@@ -2,8 +2,7 @@
 
 while true; do
     # Solicita dominio y email
-    echo "Introduce tu dominio (incluyendo el 'www' y el '.com' o '.es' o la extensión que sea):"
-    echo "Ejemplo: www.drorganvidez.com\n"
+    echo "Introduce tu dominio (incluyendo el 'www' y el '.com' o '.es' o la extensión que sea). Ejemplo: www.drorganvidez.com"
     read domain
 
     echo "Introduce tu email: "
@@ -12,7 +11,8 @@ while true; do
     # Muestra un resumen de lo ingresado y solicita confirmación
     echo "Configurado con el dominio $domain"
     echo "Configurado con el email $email"
-    echo "\n¿Estás seguro de que la información ingresada es correcta? [y/n]"
+    echo ""
+    echo "¿Estás seguro de que la información ingresada es correcta? [y/n]"
     read confirm
 
     # Si el usuario confirma, rompe el bucle y continua con el script. Si no, repite el bucle.
@@ -20,6 +20,7 @@ while true; do
         break
     else
         echo "Por favor, reintroduce los datos."
+        echo ""
     fi
 done
 
