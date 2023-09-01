@@ -16,7 +16,7 @@ while true; do
     read confirm
 
     # Si el usuario confirma, rompe el bucle y continua con el script. Si no, repite el bucle.
-    if [[ $confirm == "y" || $confirm == "Y" ]]; then
+    if [ "$confirm" = "y" ] || [ "$confirm" = "Y" ]; then
         break
     else
         echo "Por favor, reintroduce los datos."
@@ -30,4 +30,5 @@ sed -i "s/www.domain.com/$domain/g" ./nginx/ssl.conf
 # Levantamos contenedor de Nginx
 docker compose -f docker-compose.setup.yml up -d nginx
 
-docker compose -f docker-compose.setup.yml run certbot certonly --webroot --webroot-path=/var/www/certbot -d $domain --email $email --agree-tos --no-eff-email --force-renewal
+# Generamos certificado
+docker-compose -f docker-compose.setup.yml run certbot certonly --webroot --webroot-path=/var/www -d $domain --email $email --agree-tos --no-eff-email --force-renewal
