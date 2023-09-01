@@ -32,4 +32,4 @@ sed -i "s/www.domain.com/$domain/g" ./nginx/ssl.conf
 docker compose -f docker-compose.setup.yml up -d nginx
 
 # Generamos certificado
-docker-compose -f docker-compose.setup.yml run certbot certonly --webroot --webroot-path=/var/www -d $domain --email $email --agree-tos --no-eff-email --force-renewal
+docker compose -f docker-compose.setup.yml run certbot certonly --webroot --webroot-path=/var/www -d $domain --email $email --agree-tos --no-eff-email --force-renewal
